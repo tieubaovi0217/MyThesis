@@ -7,8 +7,8 @@ x-backend: &default-backend
     - custom-nginx
   networks:
     - my_network
-  ports:
-    - '5000:5000'
+  expose:
+    - '5000'
   volumes:
     - ./root:/tmp/root
   environment:
@@ -30,7 +30,6 @@ services:
       - my_network
     ports:
       - '8080:8080'
-      - '8081:8081'
     volumes:
       - ./drive:/tmp/drive
       - ./root:/tmp/root
@@ -42,8 +41,8 @@ services:
     networks:
       - my_network
     restart: always
-    ports:
-      - '27017:27017'
+    expose:
+      - '27017'
     volumes:
       - ./db:/data/db
     environment:
@@ -65,13 +64,10 @@ services:
   backend-1:
     <<: *default-backend
     restart: always
-    ports:
-      - '5000:5000'
 
   # backend-2:
   #   <<: *default-backend
-  #   ports:
-  #     - '5001:5000'
+  #   restart: always
 
 networks:
   my_network:
