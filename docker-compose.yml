@@ -41,8 +41,8 @@ services:
     networks:
       - my_network
     restart: always
-    expose:
-      - '27017'
+    ports:
+      - '27017:27017'
     volumes:
       - ./db:/data/db
     environment:
@@ -60,6 +60,7 @@ services:
       - '3000:80'
     environment:
       - REACT_APP_API_URL=${REACT_APP_API_URL}
+      - REACT_APP_API_READY_PLAYER_ME_SUB_DOMAIN={REACT_APP_API_READY_PLAYER_ME_SUB_DOMAIN}
 
   backend-1:
     <<: *default-backend

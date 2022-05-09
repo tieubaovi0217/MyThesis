@@ -1,1 +1,4 @@
-docker-compose --env-file .env up --build
+docker-compose --env-file .env up --build -V
+
+# run local-mongodb only
+docker-compose run -d -p 27017:27017 local-mongodb
