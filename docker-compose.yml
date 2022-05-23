@@ -21,6 +21,7 @@ x-backend: &default-backend
     - DB_PASSWORD=${DB_PASSWORD}
     - DB_PORT=${DB_PORT}
     - DB_NAME=${DB_NAME}
+    - WEB_URL=${WEB_URL}
 
 services:
   custom-nginx:
@@ -61,6 +62,8 @@ services:
     environment:
       - REACT_APP_API_URL=${REACT_APP_API_URL}
       - REACT_APP_API_READY_PLAYER_ME_SUB_DOMAIN={REACT_APP_API_READY_PLAYER_ME_SUB_DOMAIN}
+      - REACT_APP_EDITOR_PAGE_URL=${REACT_APP_EDITOR_PAGE_URL}
+      - REACT_APP_CONFERENCE_PAGE_URL=${REACT_APP_CONFERENCE_PAGE_URL}
 
   backend-1:
     <<: *default-backend
