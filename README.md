@@ -19,7 +19,7 @@ giúp triển khai hệ thống trên máy tính local nên ta cần cài đặt
  - Cài đặt **mkcert**, trong bản này sẽ hướng dẫn sử dụng `mkcert` trên Windows. Đối với các
    điều hành khác Linux, macOS tham khảo hướng dẫn trong đường dẫn https://github.com/FiloSottile/mkcert).
  - Trong folder `SOFT`, có 2 executable file của `mkcert` (`mkcert-v1.4.4-windows-amd64.exe` và `mkcert-v1.4.4-windows-arm64.exe`),
-   Tùy vào kiến trúc máy là ADM64 hay ARM64 mà sử dụng file tương ứng.
+   Tùy vào kiến trúc máy là AMD64 hay ARM64 mà sử dụng file tương ứng.
  - Sau đó, gõ command dưới đây để install local CA vào máy. Ví dụ đối với máy có kiến trúc amd64, ta sử 
    dụng command sau:
  ```bash
